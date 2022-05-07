@@ -43,19 +43,8 @@ const getPressibleComponent = (showMap, setShouldShowMap) => {
 };
 
 const styles = StyleSheet.create({
-    flatListStyle: {
-        marginHorizontal: '2%',
-    },
-    toggleButtonStyle: {
-        borderColor: 'red',
-        borderWidth: 1,
-        height: 40,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    toggleButtonTitleStyle: {
-        fontWeight: '300',
-        fontSize: 20,
+    listViewStyle: {
+        marginVertical: '1%',
     },
 });
 
