@@ -14,15 +14,19 @@ const ListingScreen = () => {
     }, []);
     return (
         <>
-            {getPressibleComponent(showMap, setShouldShowMap)}
             {showMap ? (
-                <MapComponent details={details}></MapComponent>
+                <MapComponent
+                    style={styles.ViewStyle}
+                    details={details}
+                ></MapComponent>
             ) : (
                 <ListingView
+                    style={styles.ViewStyle}
                     details={details}
                     listItems={listItems}
                 ></ListingView>
             )}
+            {getPressibleComponent(showMap, setShouldShowMap)}
         </>
     );
 };
@@ -36,15 +40,24 @@ const getPressibleComponent = (showMap, setShouldShowMap) => {
             style={styles.toggleButtonStyle}
         >
             <Text style={styles.toggleButtonTitleStyle}>
-                {showMap ? 'Go To Listing' : 'Go to mapView'}
+                {showMap ? 'Go to Listing' : 'Go to Map'}
             </Text>
         </Pressable>
     );
 };
 
 const styles = StyleSheet.create({
-    listViewStyle: {
-        marginVertical: '1%',
+    ViewStyle: {
+        height: '90%',
+    },
+    toggleButtonStyle: {
+        height: 60,
+        justifyContent: 'center',
+    },
+    toggleButtonTitleStyle: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: '300',
     },
 });
 
